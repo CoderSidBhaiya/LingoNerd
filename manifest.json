@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "LingoNerd",
+  "version": "0.1.0",
+  "description": "Translate Google Slides text into speaker notes.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://docs.google.com/presentation/*", "https://script.google.com/*", "https://script.googleusercontent.com/*"],
+  "action": {
+    "default_title": "LingoNerd",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/presentation/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
